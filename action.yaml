@@ -1,0 +1,28 @@
+name: 'Open Component Model tool installer'
+description: 'Install a specific version of the ocm binary. Acceptable values are latest or any semantic version string like 1.15.0'
+inputs:
+  version:
+    description: 'Version of the ocm tool'
+    required: true
+    default: 'v0.1.0-alpha.1'
+  repo:
+    description: 'Repository of the ocm tool'
+    required: true
+    default: 'open-component-model/ocm'
+outputs:
+  ocm-path:
+    description: 'Path to the cached ocm binary'
+    value: ${{ steps.install.outputs.ocm-path }}
+branding:
+  color: 'blue'
+runs:
+  using: 'composite'
+  steps:
+  - shell: bash
+    id: install
+    env:
+      version: ${{ inputs.version }}
+      repo: ${{ inputs.repo }}
+    run: |
+      echo "path: ${{ github.action_path }}"
+      "${{ github.action_path }}/install.sh"

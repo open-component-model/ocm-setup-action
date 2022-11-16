@@ -1,0 +1,22 @@
+
+"on": [push]
+
+jobs:
+  test_job:
+    runs-on: ubuntu-latest
+    name: A test job
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Setup ocm
+      id: setup
+      uses: open-component-model/ocm-setup-action@main
+      with:
+        version: v0.1.0-alpha.1
+    - name: Output
+      run: |
+        echo "OCM: ${{ steps.setup.outputs.ocm-path }}"
+        echo "DIR:"
+        pwd
+        echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+        make
