@@ -2,7 +2,7 @@
 
 WORKSPACE="${GITHUB_WORKSPACE:=/usr/local}"
 WORKSPACE="/usr/local"
-VERSION=${version:=v0.1.0-alpha.1}
+VERSION=${version:=v0.1.0-alpha.2}
 REPO=${repo:=open-component-model/ocm}
 URL=https://github.com/$REPO/releases/download
 PLATFORM=linux-amd64
