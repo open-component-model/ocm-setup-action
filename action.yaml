@@ -4,7 +4,7 @@ inputs:
   version:
     description: 'Version of the ocm tool'
     required: true
-    default: 'v0.1.0-alpha.1'
+    default: 'v0.1.0-alpha.2'
   repo:
     description: 'Repository of the ocm tool'
     required: true
