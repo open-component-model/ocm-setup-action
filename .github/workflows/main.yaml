@@ -12,7 +12,7 @@ jobs:
       id: setup
       uses: open-component-model/ocm-setup-action@main
       with:
-        version: v0.2.0-rc.1
+        version: 0.3.0-rc.1
     - name: Output
       run: |
         echo "OCM: ${{ steps.setup.outputs.ocm-path }}"
