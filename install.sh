@@ -3,11 +3,11 @@
 WORKSPACE="/usr/local"
 REPO=${repo:=open-component-model/ocm}
 BINARY=ocm
-VERSION=${version:=0.3.0-rc.1}
+VERSION=${version:=v0.3.0-rc.1}
 PLATFORM=linux
 ARCH=amd64
-ARCHIVEFILE="${BINARY}-${VERSION}-${PLATFORM}-${ARCH}.tar.gz"
-URL="https://github.com/$REPO/releases/download/v$VERSION/$ARCHIVEFILE"
+ARCHIVEFILE="${BINARY}-${VERSION#v}-${PLATFORM}-${ARCH}.tar.gz"
+URL="https://github.com/$REPO/releases/download/v${VERSION#v}/$ARCHIVEFILE"
 TARGET=${WORKSPACE}/bin/ocm
 
 cd /tmp
