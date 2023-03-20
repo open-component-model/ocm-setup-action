@@ -14,7 +14,7 @@ cd /tmp
 echo "Install Open Component Model CLI Tool version $version from $REPO"
 rm -f ocm-cli.tgz
 mkdir -p "$(dirname "$TARGET")"
-curl -L -o ocm-cli.tgz "$URL"
+curl -Ls -o ocm-cli.tgz "$URL"
 tar --overwrite -xvzf ocm-cli.tgz
 cp ocm "$TARGET"
 chmod a+x "$TARGET"
