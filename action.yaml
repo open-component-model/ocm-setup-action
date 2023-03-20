@@ -2,9 +2,9 @@ name: 'Open Component Model tool installer'
 description: 'Install a specific version of the ocm binary. Acceptable values are latest or any semantic version string like 1.15.0'
 inputs:
   version:
-    description: 'Version of the ocm tool'
+    description: 'Version of the ocm tool (defaulted to latest version)'
     required: true
-    default: '0.3.0-rc.1'
+    default: latest
   repo:
     description: 'Repository of the ocm tool'
     required: true

@@ -10,7 +10,7 @@ subsequenet step to build a project.
 
 ### `version`
 
-**Optional** The tool version to install. Default `"v0.3.0-rc.1"`.
+**Optional** The tool version to install. By default the latest version is installed.
 
 ### `repo`
 
