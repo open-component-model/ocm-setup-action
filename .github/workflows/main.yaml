@@ -7,7 +7,7 @@ jobs:
     name: A test job
     steps:
     - name: Checkout
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
     - name: Setup ocm
       id: setup
       uses: open-component-model/ocm-setup-action@main
