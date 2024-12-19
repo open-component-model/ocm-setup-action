@@ -2,7 +2,7 @@
 set -o pipefail
 
 REPO=${repo:=open-component-model/ocm}
-: ${WORKSPACE:=/usr/local}
+WORKSPACE=${GITHUB_WORKSPACE:=/usr/local}
 
 if [ -z "$version" -o "$version" == latest ]; then
   version="$(basename "$(curl -Ls -o /dev/null -w %{url_effective} https://github.com/$REPO/releases/latest)")"
@@ -15,7 +15,7 @@ PLATFORM=linux
 ARCH=amd64
 ARCHIVEFILE="${BINARY}-${VERSION}-${PLATFORM}-${ARCH}.tar.gz"
 URL="https://github.com/$REPO/releases/download/v${VERSION}/$ARCHIVEFILE"
-TARGET=${WORKSPACE}/bin/ocm
+TARGET=${WORKSPACE}/ocm
 
 cd /tmp
 echo "Installing Open Component Model CLI Tool version $version from $REPO"
@@ -29,3 +29,5 @@ echo "ocm installed into $TARGET"
 if [ -n "$GITHUB_OUTPUT" ]; then
   echo "ocm-path=$TARGET" >> "$GITHUB_OUTPUT"
 fi
+# add installation folder to PATH to be able to use "which ocm" in subsequent steps to detect installation path
+echo "$TARGET" >> $GITHUB_PATH
