@@ -1,7 +1,6 @@
 #!/bin/bash -e
 set -o pipefail
 
-
 REPO=${repo:=open-component-model/ocm}
 WORKSPACE=${GITHUB_WORKSPACE:=/usr/local}
 
