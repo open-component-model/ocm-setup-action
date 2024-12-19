@@ -15,8 +15,6 @@ jobs:
 #        version: v0.19.0
     - name: Output
       run: |
-        echo "OCM: ${{ steps.setup.outputs.ocm-path }}"
-        echo "DIR:"
-        pwd
         echo "GITHUB_WORKSPACE: $GITHUB_WORKSPACE"
+        which ocm
         ocm --version

@@ -8,19 +8,20 @@ if [ -z "$version" -o "$version" == latest ]; then
   echo "Selecting latest version: $version"
 fi
   
-BINARY=ocm
 VERSION=${version#v}
 PLATFORM=linux
 ARCH=amd64
-ARCHIVEFILE="${BINARY}-${VERSION}-${PLATFORM}-${ARCH}.tar.gz"
+ARCHIVEFILE="ocm-${VERSION}-${PLATFORM}-${ARCH}.tar.gz"
 URL="https://github.com/$REPO/releases/download/v${VERSION}/$ARCHIVEFILE"
+TARGET="$HOME/.local/bin"
 
-cd /tmp
-echo "Installing Open Component Model CLI Tool version $version from $REPO"
+# prepare target directory
+mkdir -p $TARGET
+cd $TARGET
 rm -f ocm-cli.tgz
-curl -Ls -o ocm-cli.tgz "$URL"
+echo "$$TARGET" >> "$GITHUB_PATH"
+
+echo "Installing ocm-cli version $version from $REPO"
+curl -LsS -o ocm-cli.tgz "$URL"
 tar --overwrite -xvzf ocm-cli.tgz >/dev/null
 chmod a+x ocm
-
-./ocm --version
-echo "$PWD" >> $GITHUB_PATH
