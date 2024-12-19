@@ -30,4 +30,4 @@ if [ -n "$GITHUB_OUTPUT" ]; then
   echo "ocm-path=$TARGET" >> "$GITHUB_OUTPUT"
 fi
 # add installation folder to PATH to be able to use "which ocm" in subsequent steps to detect installation path
-echo "$WORKSPACE" >> $GITHUB_PATH
+echo "$TARGET" >> $GITHUB_PATH
