@@ -22,4 +22,5 @@ curl -Ls -o ocm-cli.tgz "$URL"
 tar --overwrite -xvzf ocm-cli.tgz >/dev/null
 chmod a+x ocm
 
-ocm --version
+./ocm --version
+echo "$PWD/ocm" >> $GITHUB_PATH
