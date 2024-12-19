@@ -23,4 +23,4 @@ tar --overwrite -xvzf ocm-cli.tgz >/dev/null
 chmod a+x ocm
 
 ./ocm --version
-echo "$PWD/ocm" >> $GITHUB_PATH
+echo "$PWD" >> $GITHUB_PATH
