@@ -15,7 +15,7 @@ PLATFORM=linux
 ARCH=amd64
 ARCHIVEFILE="${BINARY}-${VERSION}-${PLATFORM}-${ARCH}.tar.gz"
 URL="https://github.com/$REPO/releases/download/v${VERSION}/$ARCHIVEFILE"
-TARGET=${WORKSPACE}/bin/ocm
+TARGET=${WORKSPACE}/ocm
 
 cd /tmp
 echo "Installing Open Component Model CLI Tool version $version from $REPO"
