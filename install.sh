@@ -19,11 +19,9 @@ TARGET="$HOME/.local/bin"
 mkdir -p $TARGET
 cd $TARGET
 rm -f ocm-cli.tgz
+echo "$TARGET" >> "$GITHUB_PATH"
 
 echo "Installing ocm-cli version $version from $REPO"
 curl -LsS -o ocm-cli.tgz "$URL"
 tar --overwrite -xvzf ocm-cli.tgz >/dev/null
 chmod a+x ocm
-
-# Add ocm to the path
-echo "$$TARGET" >> "$GITHUB_PATH"
